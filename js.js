@@ -1,22 +1,18 @@
-// 018+019 Control Flow + For Loops
+// 020 While Loops
 
-// Simple Loop ( цикл )
+ let i =0;
 
-for (let i = 0; i< 5; i++ ){
-    console.log('in loop:', i);
-}
+ while(i < 5){
+     console.log(i);
+     i++;
+ }
 
-// Loop with Array
+//  While with Array
 
-const names = ['Max','Rax','Tax']
+const names = ['Max','Rax','Tax'];
+let i = 0;
 
-for (let i = 0; i < names.length; i++){
+while(i < names.length){
     console.log(names[i]);
-}
-
-// Loop with Template String
-
-for (let i = 0; i < names.length; i++){
-    let html = `<div>${names[i]}</div>`;
-    console.log(html);
+    i++;
 }
