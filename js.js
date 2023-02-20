@@ -1,33 +1,22 @@
-// let age = 25;
-// console.log(age === 25);
-// console.log(age === '25');
-// console.log(age !== 25);
-// console.log(age !== '25');
+// 018+019 Control Flow + For Loops
 
+// Simple Loop ( цикл )
 
-// 017 Type Conversion 
+for (let i = 0; i< 5; i++ ){
+    console.log('in loop:', i);
+}
 
-//Превращение стринга в намбер
+// Loop with Array
 
-let score = '100';
+const names = ['Max','Rax','Tax']
 
-score = Number(score);
-console.log(score + 1)
+for (let i = 0; i < names.length; i++){
+    console.log(names[i]);
+}
 
-//Превращение инта в намбер + проверка типа
+// Loop with Template String
 
-let result = String(100);
-
-console.log(result, typeof result);
-
-// Booleans
-
-let val = Boolean(0); // нулевой булиан равен false
-let val2 = Boolean(1); // if let ≠ 0 -> будет true
-
-let val3 = Boolean(''); // Если стринговый булин не пустой - true, пуст false
-
-
-console.log(val, val2, val3)
-
-////////////////////////////////
+for (let i = 0; i < names.length; i++){
+    let html = `<div>${names[i]}</div>`;
+    console.log(html);
+}
