@@ -1,4 +1,7 @@
-// 023 else If Statements
+// 024 Logical operators
+
+// OR ||
+// AND &&
 
 const password  = 'password';
 
