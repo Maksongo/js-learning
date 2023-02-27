@@ -1,15 +1,15 @@
-// 024 Logical operators
+// 025 Logical NOT
 
-// OR ||
-// AND &&
+let user = false;
 
-const password  = 'p@sse';
+if (!user){
+    console.log('you must be loggen in to continue')
+}
 
+// its works also:
 
-if(password.length >= 12){
-    console.log('nice password,bruh');
-} else if(password.length >= 8 || password.includes('@') && password.length >= 5){
-    console.log('normal password,bruh');
-} else {
-    console.log('lame pass, bruh');
+let uzer = true;
+
+if (uzer){
+    console.log('you must be loggen in to continue too')
 }
