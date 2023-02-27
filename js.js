@@ -3,12 +3,12 @@
 // OR ||
 // AND &&
 
-const password  = 'password';
+const password  = 'p@sse';
 
 
 if(password.length >= 12){
     console.log('nice password,bruh');
-} else if(password.length >= 8){
+} else if(password.length >= 8 || password.includes('@') && password.length >= 5){
     console.log('normal password,bruh');
 } else {
     console.log('lame pass, bruh');
