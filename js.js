@@ -1,15 +1,17 @@
-// 025 Logical NOT
+// 026 break and continue
 
-let user = false;
+const scores = [50, 25, 0, 30, 100, 20 ,10];
 
-if (!user){
-    console.log('you must be loggen in to continue')
-}
+for(let i = 0; i < scores.length; i++){
 
-// its works also:
+    if(scores[i] === 0){
+        continue;
+    }
 
-let uzer = true;
+    console.log('your score: ', scores[i]);
 
-if (uzer){
-    console.log('you must be loggen in to continue too')
+    if(scores[i] === 100){
+        console.log('congrats, you got the top score!')
+        break;
+    }
 }
