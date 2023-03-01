@@ -1,27 +1,17 @@
-// 027 Switch Statements
+// 028 Variables & Block Scope
 
-const grade = 'A';
+const age = 30;
 
-switch(grade){
-    case 'A':
-        console.log('you got an A!');
-        break;
-    case 'B':
-        console.log('you got an B!');
-        break;
-    case 'C':
-        console.log('you got an C!');
-        break;
-    case 'D':
-         console.log('you got an D!');
-         break;
-    case 'E':
-         console.log('you got an E!');
-        break;
-    default:
-        console.log('not a vaild grade');                  
+if(true){
+    const age = 40;
+    const name = 'Max';
+    console.log('inside 1st code block: ', age, name);
+
+    if(true){
+        const age = 50;
+        console.log('inside 2nd code block: ', age);
+        var test = 'hello'; // var видно во всем пространстве
+    }
 }
 
-
-/// it's a strict comparison 
-/// case A = будет сравниваться строго, включая тип переменных
+console.log('Outsude code block: ', age, name, test)
