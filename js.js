@@ -1,17 +1,7 @@
-// 028 Variables & Block Scope
+// 029 Functions
 
-const age = 30;
+// Иногда надо повторять одно и то же действие во многих частях программы.
 
-if(true){
-    const age = 40;
-    const name = 'Max';
-    console.log('inside 1st code block: ', age, name);
+// Например, необходимо красиво вывести сообщение при приветствии посетителя, при выходе посетителя с сайта, ещё где-нибудь.
 
-    if(true){
-        const age = 50;
-        console.log('inside 2nd code block: ', age);
-        var test = 'hello'; // var видно во всем пространстве
-    }
-}
-
-console.log('Outsude code block: ', age, name, test)
+// Чтобы не повторять один и тот же код во многих местах, придуманы функции. Функции являются основными «строительными блоками» программы.
