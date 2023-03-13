@@ -1,15 +1,19 @@
-// 034 Functions vs Methods
+// 034 Foreach Method & Callbacks
 
-const name = 'shaun';
+// Normal Function
 
-// functions
+let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
 
-const greet = () => 'hello';
+people.forEach((person, index) => {
+    console.log(index, person);
+}); 
 
-let resultOne = greet();
-console.log(resultOne);
+// Call back
 
-// methods
+let people2 = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
 
-let resultTwo = name.toUpperCase();
-console.log(resultTwo);
+const logPerson = (person, index) => {
+    console.log (`${index} - hello ${person}`);
+};
+
+people2.forEach(logPerson);
