@@ -1,19 +1,15 @@
-// 034 Foreach Method & Callbacks
+// 036 Callback Functions in Action
 
-// Normal Function
+const ul = document.querySelector('.people');
 
-let people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+const people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
 
-people.forEach((person, index) => {
-    console.log(index, person);
-}); 
+let html = ``;
 
-// Call back
+people.forEach(person => {
+    // create html template
+    html += `<li style="color: purple">${person}</li>`;
+});
 
-let people2 = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
-
-const logPerson = (person, index) => {
-    console.log (`${index} - hello ${person}`);
-};
-
-people2.forEach(logPerson);
+console.log(html);
+ul.innerHTML = html;
