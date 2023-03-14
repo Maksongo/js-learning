@@ -1,15 +1,16 @@
 // 036 Callback Functions in Action
 
-const ul = document.querySelector('.people');
+// Объекты в js можно сравнить с объектами в реальной жизни
 
-const people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
+//// телефон
+// свойства: размер, цвет, модель
+// действия: звонить, сделать фотку, проигрывать музыку
 
-let html = ``;
+//// user object в JS
+// свойства: емаил, юзернейм, пол
+// методы: login, logout
+//// blog object
+// свойства: title, content, author
+// методы: publish, unpublish, delete
 
-people.forEach(person => {
-    // create html template
-    html += `<li style="color: purple">${person}</li>`;
-});
-
-console.log(html);
-ul.innerHTML = html;
+// в JS действия совершаемые объектом называются методами ( methods )
