@@ -1,16 +1,21 @@
-// 036 Callback Functions in Action
+// 037 Creating an Object Literal
 
-// Объекты в js можно сравнить с объектами в реальной жизни
+let user = {
+    name: 'crystal',
+    age: 30,
+    email: 'trap@trap.ru',
+    location: 'omsk',
+    drinks: ['beer', 'vodka']
+};
 
-//// телефон
-// свойства: размер, цвет, модель
-// действия: звонить, сделать фотку, проигрывать музыку
+console.log(user);
+console.log(user.name);
 
-//// user object в JS
-// свойства: емаил, юзернейм, пол
-// методы: login, logout
-//// blog object
-// свойства: title, content, author
-// методы: publish, unpublish, delete
+// меняем значение в объекте
+user.age = 35;
+console.log(user.age);
 
-// в JS действия совершаемые объектом называются методами ( methods )
+// так-же можно так запрос делать
+console.log(user['name']);
+user['name'] = 'chun-li';
+console.log(user['name']);
