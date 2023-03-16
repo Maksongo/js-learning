@@ -1,24 +1,25 @@
-const peopleInFiller = () => {
-    const ul = document.querySelector('.people');
-    
-    const people = ['mario', 'luigi', 'ryu', 'shaun', 'chun-li'];
-    
-    let html = ``;
-    
-    people.forEach(person => {
-        // create html template
-        html += `<li style="color: purple">${person}</li>`;
-    });
-    
-    console.log(html);
-    ul.innerHTML = html;
-}
+// 040 ‘this’ keyword
 
-
-let buttons = document.getElementsByTagName('button');
-
-for (let i = 0, len = buttons.length; i < len; ++i) {
-    const singleButton = buttons[i];
-    singleButton.addEventListener("click", peopleInFiller
-    )
+let user = {
+    name: 'crystal',
+    age: 30,
+    email: 'trap@trap.ru',
+    location: 'omsk',
+    drinks: ['beer', 'vodka'],
+    login(){
+        console.log('the user logged in');
+    },
+    logout(){
+        console.log('the user logged out');
+    },
+    logDrinks(){
+        console.log('the user like to drink: ', this.drinks)
+        this.drinks.forEach(drink => {
+            console.log(drink);
+        })
+    }
 };
+
+user.login();
+user.logout();
+user.logDrinks();
