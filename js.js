@@ -1,34 +1,21 @@
-// 041 Objects in Arrays
+// 042 Math object
 
-// how to create a Objects in Arrays
-// const drinks = [
-//     { title: 'vodka', val: 40},
-//     { title: 'beer', val: 5}
-// ];
+// готовый Math объект со своими методами
 
-let user = {
-    name: 'crystal',
-    age: 30,
-    email: 'trap@trap.ru',
-    location: 'omsk',
-    drinks: [
-        { title: 'vodka', val: 40},
-        { title: 'beer', val: 5}
-    ],
-    login(){
-        console.log('the user logged in');
-    },
-    logout(){
-        console.log('the user logged out');
-    },
-    logDrinks(){
-        console.log('the user like to drink: ', this.drinks)
-        this.drinks.forEach(drink => {
-            console.log(drink.title, drink.val);
-        })
-    }
-};
+console.log(Math); 
+console.log(Math.PI); // число P
+console.log(Math.E); // число Е
 
-user.login();
-user.logout();
-user.logDrinks();
+const area = 7.1;
+
+console.log(Math.round(area)); // округляет число в меньшую или большую
+console.log(Math.floor(area)); // округляет в меншую
+console.log(Math.ceil(area)); // округляет в большую 
+console.log(Math.trunc(area)); // убирает из 7.1 все что после целого числа
+
+// random numbers
+
+const random = Math.random(); // случайно число от 0.000 до 1
+console.log(random);
+
+console.log(Math.round(random * 100)); // случайной число от 1 до 100
