@@ -1,21 +1,21 @@
-// 042 Math object
+// 043 Primitive vs Reference Types
 
-// готовый Math объект со своими методами
+// primitive values
 
-console.log(Math); 
-console.log(Math.PI); // число P
-console.log(Math.E); // число Е
+let scoreOne = 50;
+let scoreTwo = scoreOne;
 
-const area = 7.1;
+console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
 
-console.log(Math.round(area)); // округляет число в меньшую или большую
-console.log(Math.floor(area)); // округляет в меншую
-console.log(Math.ceil(area)); // округляет в большую 
-console.log(Math.trunc(area)); // убирает из 7.1 все что после целого числа
+scoreOne = 100;
+console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
 
-// random numbers
+// reference values
 
-const random = Math.random(); // случайно число от 0.000 до 1
-console.log(random);
+const userOne = { name: 'ryu', age: 30 };
+const userTwo = userOne;
 
-console.log(Math.round(random * 100)); // случайной число от 1 до 100
+console.log(userOne, userTwo);
+
+userOne.name = 'max';
+console.log(userOne, userTwo)
