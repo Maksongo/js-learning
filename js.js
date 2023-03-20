@@ -1,21 +1,9 @@
-// 043 Primitive vs Reference Types
+// 044-045 Interacting with the Browser + DOM
 
-// primitive values
-
-let scoreOne = 50;
-let scoreTwo = scoreOne;
-
-console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
-
-scoreOne = 100;
-console.log(`scoreOne: ${scoreOne}`, `scoreTwo: ${scoreTwo}`);
-
-// reference values
-
-const userOne = { name: 'ryu', age: 30 };
-const userTwo = userOne;
-
-console.log(userOne, userTwo);
-
-userOne.name = 'max';
-console.log(userOne, userTwo)
+// С помощью JS можно например
+// - добавить контент на страницу, поменять стиль, сделать событие на клик, всплывающие окно
+// DOM – это объектная модель документа (Document Object Model). Представляет она собой древовидную структуру страницы, состоящую из узлов. Каждый узел в ней – это объект, который может иметь определённые свойства и методы. Иными словами, можно сказать, что DOM – это набор иерархически связанных между собой объектов.
+ 
+// Процесс состоит из большого количества шагов, их грубо можно представить в виде двух:
+// 1.	Анализирует HTML-документ, чтобы определить то, что в конечном итоге нужно отобразить на странице;
+// 2.	Выполняет отрисовку того что нужно отобразить.
