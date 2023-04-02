@@ -1,4 +1,4 @@
-# Урок 1
+# Урок 1 - welcome + strings
 
 Расположение < script > < / script > следует делать перед < /body >
 
@@ -90,4 +90,35 @@ let result2 = FullName.substr(4, 6);
 
 ```js
 let result2 = FullName.replace("M", "W");
+```
+
+# Урок 2 - Numbers
+
+Numbers - Это любые числовые выражения. 1, 100, 3.14 и т.д
+
+```js
+let radius = 10;
+const pi = 3.14;
+```
+
+Math operators +, -, \*, /, \*\*, %
+
+```js
+console.log(10 / 2 );
+
+let likes = 10;
+likes = likes+1;
+likes++; --;					     	 // +1 -1
+likes += 10; -=10; *=10; /=10; 		 // + - * / на 10
+```
+
+NaN – not A number – если числовая переменная имеет не цифровое значение:
+
+```js
+console.log(10 - "hello") - NaN;
+```
+
+String может содерожать в себе – числовое выражение внутри:
+```js
+let result = 'i have a ' + likes + ' slice of space'
 ```
