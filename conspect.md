@@ -119,6 +119,47 @@ console.log(10 - "hello") - NaN;
 ```
 
 String может содерожать в себе – числовое выражение внутри:
+
 ```js
-let result = 'i have a ' + likes + ' slice of space'
+let result = "i have a " + likes + " slice of space";
 ```
+
+# Урок 1-2 TEMPLATE STRINGS ( TEMPLATE LITERAL )
+
+## CONCETINATION WAY
+
+Огромный стринг. Включает в себя несколько переменных и простой текст
+
+```js
+let result =
+  "The blog called " +
+  title +
+  " by author " +
+  author +
+  " has " +
+  likes +
+  " likes";
+```
+
+## Template string way
+
+Выглядит меньше.
+Перменная помещается в ${} внутри `` .  кнопка ё
+
+```js
+let result = `The blog called ${title} by author ${author} has ${likes} likes`;
+```
+
+## HTML template
+
+используются HTML теги
+
+```js
+let result = `
+    <h2>${title}</h2>
+    <p>By ${author}</p>
+    <span>has ${likes} likes</span>
+    `;
+```
+
+
