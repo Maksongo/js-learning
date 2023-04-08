@@ -1,4 +1,4 @@
-# Урок 1 - welcome + strings
+# Уроки 1-15 - welcome + strings
 
 Расположение < script > < / script > следует делать перед < /body >
 
@@ -92,7 +92,7 @@ let result2 = FullName.substr(4, 6);
 let result2 = FullName.replace("M", "W");
 ```
 
-# Урок 2 - Numbers
+# Урок - Numbers
 
 Numbers - Это любые числовые выражения. 1, 100, 3.14 и т.д
 
@@ -124,7 +124,7 @@ String может содерожать в себе – числовое выра
 let result = "i have a " + likes + " slice of space";
 ```
 
-# Урок * - Template strings ( template literal )
+# Урок - Template strings ( template literal )
 
 ## CONCETINATION WAY
 
@@ -162,7 +162,7 @@ let result = `
     `;
 ```
 
-# Урок 3 - Arrays
+# Урок - Arrays
 
 Пример Array ( массива )
 
@@ -217,7 +217,7 @@ console.log(drugs);
 
 Метод pop удаляет последний элемент из массива. При этом исходный массив изменяется, а результатом метода возвращается удаленный элемент.
 
-# Урок 4 - null and undifiend
+# Урок - null and undifiend
 
 ## undefined - примитивный тип данных который присваивается переменным как только они были объявлены.
 
@@ -230,3 +230,44 @@ console.log(drugs);
 null является определенным значением отсутствия объекта или отсутствия значения для которого внутри объекта определен ключ.
 
 undefined обозначает неопределенность, а именно то что контейнер был создан но его значение не определили или свойство не было определено вовсе.
+
+# Урок - Boolean
+
+## True – правда
+
+## False – ложь
+
+Метод .includes(‘@’) – проверяет наличие @ в стринге email
+
+```js
+let email = "speeeed52x@ya.ru";
+
+let result = email.includes("@");
+
+console.log(result); // выдаст true
+```
+
+В данном примере происходит сравнений переменной с чем либо
+
+```js
+let age = 25;
+console.log(age == 25); //true
+console.log(age == 30); //false
+console.log(age != 30); //true
+console.log(age > 20); //true
+console.log(age < 20); //false
+console.log(age <= 25); //true
+console.log(age >= 25); //true
+```
+
+Маленька буква > Большой буквы
+S > C – по местоположению в алфавите
+
+```js
+let name = shaun;
+console.log(name == "shaun"); //true
+console.log(name == "Shaun"); //false
+console.log(name > "crystal"); //true
+console.log(name > "Shaun"); //false
+console.log(name < "Crystal"); //false
+```
