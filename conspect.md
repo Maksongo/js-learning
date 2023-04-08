@@ -271,3 +271,27 @@ console.log(name > "crystal"); //true
 console.log(name > "Shaun"); //false
 console.log(name < "Crystal"); //false
 ```
+
+# Урок 016 Loose vs Strict Comparison
+
+Loose comparion – свободное сравнение
+
+```js
+let age = 25;
+console.log(age == 25); //true
+console.log(age == "25"); //true
+console.log(age != 25); //false
+console.log(age != "25"); //false
+```
+
+strict comparison – строгое сравнение
+
+Значение должно быть тем же типом
+
+```js
+let age = 25;
+console.log(age === 25); //true
+console.log(age === "25"); //false
+console.log(age !== 25); //false
+console.log(age !== "25"); //true
+```
