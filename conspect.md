@@ -324,3 +324,41 @@ let val2 = Boolean(1); // if let ≠ 0 -> будет true
 
 let val3 = Boolean(""); // Если стринговый булин не пустой - true, пуст false
 ```
+
+# Уроки 18+19 Control Flow + For Loops
+
+## Контроль потока:
+
+**Каждая итерация проходит через один цикл**
+
+```js
+// Simple Loop ( цикл )
+
+for (let i = 0; i < 5; i++) {
+  console.log("in loop:", i);
+}
+```
+
+For (Задаем значение I; ставим условие; что будет происходить) {}
+For(initialization; Condition; final expression)
+
+## Loop with Array
+
+```js
+const names = ["Max", "Rax", "Tax"];
+
+for (let i = 0; i < names.length; i++) {
+  console.log(names[i]);
+}
+```
+
+В данном случае перебирается массив равный его длине .length до тех пор пока он не исчерпается
+
+## Loop with Template String:
+
+```js
+for (let i = 0; i < names.length; i++) {
+  let html = `<div>${names[i]}</div>`;
+  console.log(html);
+}
+```
