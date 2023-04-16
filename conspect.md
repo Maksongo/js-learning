@@ -272,7 +272,7 @@ console.log(name > "Shaun"); //false
 console.log(name < "Crystal"); //false
 ```
 
-# Урок 016 Loose vs Strict Comparison
+# Урок 16 - Loose vs Strict Comparison
 
 Loose comparion – свободное сравнение
 
@@ -294,4 +294,33 @@ console.log(age === 25); //true
 console.log(age === "25"); //false
 console.log(age !== 25); //false
 console.log(age !== "25"); //true
+```
+
+# Урок 17 - 017 Type Conversion ( Преобразование типа )
+
+## Превращение переменной score – из стринга в намбер:
+
+```js
+let score = "100";
+
+score = Number(score);
+console.log(score + 1);
+```
+
+## Превращение инта в намбер + проверка типа:
+
+```js
+let result = String(100);
+
+console.log(result, typeof result);
+```
+
+## Booleans:
+
+```js
+let val = Boolean(0); // нулевой булиан равен false
+
+let val2 = Boolean(1); // if let ≠ 0 -> будет true
+
+let val3 = Boolean(""); // Если стринговый булин не пустой - true, пуст false
 ```
