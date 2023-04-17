@@ -365,7 +365,7 @@ for (let i = 0; i < names.length; i++) {
 
 # Уроки 20-21 While Loops
 
-пример While loop:
+## пример While loop:
 
 ```js
 let i = 0;
@@ -396,4 +396,50 @@ do {
   i++;
 } while (i < 5);
 console.log(i);
+```
+
+# Уроки 22,23,24 If, Else Statements. Logical Operators
+
+## Conditional statements- Условные операторы
+
+Пару примеров применения условных операторов:
+
+```js
+const password = "pass";
+
+if (password.length >= 8) {
+  console.log("nice password,bruh");
+}
+```
+
+```js
+if (password.length >= 12) {
+  console.log("nice password,bruh");
+} else if (password.length >= 8) {
+  console.log("normal password,bruh");
+} else {
+  console.log("lame pass, bruh");
+}
+```
+
+## Логические операторы:
+
+- || (ИЛИ)
+- && (И)
+
+Примеры:
+
+```js
+const password = "p@sse";
+
+if (password.length >= 12) {
+  console.log("nice password,bruh");
+} else if (
+  password.length >= 8 ||
+  (password.includes("@") && password.length >= 5)
+) {
+  console.log("normal password,bruh");
+} else {
+  console.log("lame pass, bruh");
+}
 ```
