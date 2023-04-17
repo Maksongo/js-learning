@@ -362,3 +362,38 @@ for (let i = 0; i < names.length; i++) {
   console.log(html);
 }
 ```
+
+# Уроки 20-21 While Loops
+
+пример While loop:
+
+```js
+let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+```
+
+// Задаем значение переменной i = 4
+
+// делаем do ни смотря ни на что
+
+// затем идет проверка условия в while
+
+// Если условие false - цикл прерывается. Но значение в DO - будет произведено
+
+```js
+// 021 Somre more aboout While Loops
+
+// do while loops
+
+let i = 5;
+
+do {
+  console.log(i);
+  i++;
+} while (i < 5);
+console.log(i);
+```
