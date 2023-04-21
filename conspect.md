@@ -443,3 +443,38 @@ if (password.length >= 12) {
   console.log("lame pass, bruh");
 }
 ```
+
+# Урок 25 Logical NOT ( логический оператор НЕТ )
+
+## Логический оператор НЕ ( ! ) (логическое отрицание) меняет логическое значение операнда с истины в ложь и наоборот. Обычно он используется с булевыми (логическими) значениями.
+
+---
+
+Знак ! перед переменной - > реверсирует её значение
+
+---
+
+Из true – в false
+
+Из false  - в true
+
+---
+
+```js
+let user = false;
+
+if (!user){
+    console.log('you must be loggen in to continue')
+}
+
+// its works also:
+
+let uzer = true;
+
+if (uzer){
+    console.log('you must be loggen in to continue too')
+}
+
+if (uzer){} // means что если user = true, то происходит след. действия
+
+```
