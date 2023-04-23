@@ -456,27 +456,27 @@ if (password.length >= 12) {
 
 Из true – в false
 
-Из false  - в true
+Из false - в true
 
 ---
 
 ```js
 let user = false;
 
-if (!user){
-    console.log('you must be loggen in to continue')
+if (!user) {
+  console.log("you must be loggen in to continue");
 }
 
 // its works also:
 
 let uzer = true;
 
-if (uzer){
-    console.log('you must be loggen in to continue too')
+if (uzer) {
+  console.log("you must be loggen in to continue too");
 }
 
-if (uzer){} // means что если user = true, то происходит след. действия
-
+if (uzer) {
+} // means что если user = true, то происходит след. действия
 ```
 
 # Урок 26 break and continue
@@ -484,22 +484,55 @@ if (uzer){} // means что если user = true, то происходит сл
 ## Continue – пропускает данное значение
 
 ## Break – выводит данное значение
- 
+
+
+
 ```js
-const scores = [50, 25, 0, 30, 100, 20 ,10];
+const scores = [50, 25, 0, 30, 100, 20, 10];
 
-for(let i = 0; i < scores.length; i++){
+for (let i = 0; i < scores.length; i++) {
+  if (scores[i] === 0) {
+    continue;
+  }
 
-    if(scores[i] === 0){
-        continue;
-    }
+  console.log("your score: ", scores[i]);
 
-    console.log('your score: ', scores[i]);
-
-    if(scores[i] === 100){
-        console.log('congrats, you got the top score!')
-        break;
-    }
+  if (scores[i] === 100) {
+    console.log("congrats, you got the top score!");
+    break;
+  }
 }
-
 ```
+
+# Урок 27 Switch Statements
+
+## Инструкция switch сравнивает выражение со случаями, перечисленными внутри неё, а затем выполняет соответствующие инструкции.
+
+```js
+const grade = "A";
+
+switch (grade) {
+  case "A":
+    console.log("you got an A!");
+    break;
+  case "B":
+    console.log("you got an B!");
+    break;
+  case "C":
+    console.log("you got an C!");
+    break;
+  case "D":
+    console.log("you got an D!");
+    break;
+  case "E":
+    console.log("you got an E!");
+    break;
+  default:
+    console.log("not a vaild grade");
+}
+```
+
+- происходит strict comparison ( строгое сравнени, === )
+
+- case A = будет сравниваться строго, включая тип переменных
+  
