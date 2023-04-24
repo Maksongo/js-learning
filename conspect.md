@@ -485,8 +485,6 @@ if (uzer) {
 
 ## Break – выводит данное значение
 
-
-
 ```js
 const scores = [50, 25, 0, 30, 100, 20, 10];
 
@@ -535,7 +533,7 @@ switch (grade) {
 - происходит strict comparison ( строгое сравнени, === )
 
 - case A = будет сравниваться строго, включая тип переменных
-  
+
 # Урок 28 - Variables & Block Scope
 
 ## Областью видимости в JavaScript называют часть программы, в пределах которой компьютер видит набор всех созданных переменных, функций и других данных, и может к ним обратиться. Базово разделить область видимости можно на глобальную и локальную.
@@ -553,20 +551,19 @@ switch (grade) {
 ```js
 const age = 30;
 
-if(true){
-    const age = 40;
-    const name = 'Max';
-    console.log('inside 1st code block: ', age, name);
+if (true) {
+  const age = 40;
+  const name = "Max";
+  console.log("inside 1st code block: ", age, name);
 
-    if(true){
-        const age = 50;
-        console.log('inside 2nd code block: ', age);
-        var test = 'hello'; // var видно во всем пространстве
-    }
+  if (true) {
+    const age = 50;
+    console.log("inside 2nd code block: ", age);
+    var test = "hello"; // var видно во всем пространстве
+  }
 }
 
-console.log('Outsude code block: ', age, name, test)
-
+console.log("Outsude code block: ", age, name, test);
 ```
 
 # Урок 86,87 What is Asynchronous JavaScript
@@ -579,7 +576,7 @@ console.log('Outsude code block: ', age, name, test)
 
 Асинхронность — основной инструмент, который обрабатывает запросы параллельно с загрузкой веб-страницы.
 
-- Весь код выполняется последовательно. И тут стартует асинхронная функция, которая выполняется отдельно, выносится за общий scope. А затем возвращается в - необходиый нам момент. 
+- Весь код выполняется последовательно. И тут стартует асинхронная функция, которая выполняется отдельно, выносится за общий scope. А затем возвращается в - необходиый нам момент с помощью коллбека.
 - Это позволяет продолжить выполнение остального синхронного кода, не блокируя его
 
 ```js
@@ -587,11 +584,34 @@ console.log(1);
 console.log(2);
 
 setTimeout(() => {
-  console.log('callback function fired')
-},2000);
+  console.log("callback function fired");
+}, 2000);
 
 console.log(3);
 console.log(4);
 ```
 
 Данный код - выведет надпись 'callback function fired' - спустя 2 секунды, не блокируя при этом выполнение консоль лога 3 и 4.
+
+# Урок 88 - 088 What are HTTP Requests
+
+- Запросы (HTTP Requests) — сообщения, которые отправляются клиентом на сервер, чтобы вызвать выполнение некоторых действий. Зачастую для получения доступа к определенному ресурсу. Основой запроса является HTTP-заголовок.
+
+- Ответы (HTTP Responses) — сообщения, которые сервер отправляет в ответ на клиентский запрос.
+
+Пример запроса:
+
+```js
+https://jsonplaceholder.typicode.com/todos/1
+```
+
+Пример ответа:
+
+```js
+{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+}
+```
