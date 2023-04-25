@@ -649,3 +649,28 @@ request.addEventListener("readystatechange", () => {
   }
 });
 ```
+
+# Урок 90 - Response status
+
+Информация обо всех статусах HTTP req. statuses:
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+- https://developer.mozilla.org/ru/docs/Web/HTTP/Status
+
+Необходимые сейчас
+- 200 - "Успешно". Запрос успешно обработан. Что значит "успешно", зависит от метода HTTP, который был запрошен
+- 404 - "Не найден". Сервер не может найти запрашиваемый ресурс. Код этого ответа, наверно, самый известный из-за частоты его появления в вебе.
+
+```js
+request.addEventListener("readystatechange", () => {
+  //console.log(request, request.readyState)
+  if (request.readyState === 4 && request.status === 200) {
+    console.log(request, request.responseText);
+  } else if(request.readyState === 4){
+    console.log('could not fetch the data')
+  }
+});
+```
+
+Данный код - проверяет статус запроса
+- Если статус = 4 ( получен ) и не имеет ошибок - выведится весь JSON
+- Если статус = 4, без статуса 200 - тогда выдаст ошибку
