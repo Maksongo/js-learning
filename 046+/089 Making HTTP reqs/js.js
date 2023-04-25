@@ -1,5 +1,13 @@
 // next step
 
-const request = XMLHttpRequest();
+const request = new XMLHttpRequest();
 
-request.open('GET', 'https://jsonplaceholder.typicode.com/todos')
+request.addEventListener("readystatechange", () => {
+  //console.log(request, request.readyState)
+  if (request.readyState === 4) {
+    console.log(request.responseText);
+  }
+});
+
+request.open("GET", "https://jsonplaceholder.typicode.com/todos");
+request.send();

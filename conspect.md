@@ -621,9 +621,31 @@ https://jsonplaceholder.typicode.com/todos/1
 ## Создаем REQUEST
 
 ```js
-const request = XMLHttpRequest();
+const request = new XMLHttpRequest();
 
 request.open("GET", "https://jsonplaceholder.typicode.com/todos");
+request.send();
 
+// Методы:
 // request.open('ТИП ЗАПРОСА', 'Куда делать запрос')
+// request.send(); - отправить запрос
+```
+
+Статусы запроса:
+
+<image src="consp_images/req_stts.png" alt="Описание картинки" width="70%">
+
+Данный код:
+
+- проверит стадию реквеста и выведит ее ( стадии выше на скрине )
+- когда стадия будет = 4, выведит весь массив данных в коносль
+- данный масив данных называется - JSON
+
+```js
+request.addEventListener("readystatechange", () => {
+  //console.log(request, request.readyState)
+  if (request.readyState === 4) {
+    console.log(request.responseText);
+  }
+});
 ```
