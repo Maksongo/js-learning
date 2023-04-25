@@ -615,3 +615,15 @@ https://jsonplaceholder.typicode.com/todos/1
   "completed": false
 }
 ```
+
+# Урок 89 - Making HTTP reqs
+
+## Создаем REQUEST
+
+```js
+const request = XMLHttpRequest();
+
+request.open("GET", "https://jsonplaceholder.typicode.com/todos");
+
+// request.open('ТИП ЗАПРОСА', 'Куда делать запрос')
+```
