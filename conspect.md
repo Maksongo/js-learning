@@ -653,10 +653,12 @@ request.addEventListener("readystatechange", () => {
 # Урок 90 - Response status
 
 Информация обо всех статусах HTTP req. statuses:
+
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 - https://developer.mozilla.org/ru/docs/Web/HTTP/Status
 
 Необходимые сейчас
+
 - 200 - "Успешно". Запрос успешно обработан. Что значит "успешно", зависит от метода HTTP, который был запрошен
 - 404 - "Не найден". Сервер не может найти запрашиваемый ресурс. Код этого ответа, наверно, самый известный из-за частоты его появления в вебе.
 
@@ -665,12 +667,45 @@ request.addEventListener("readystatechange", () => {
   //console.log(request, request.readyState)
   if (request.readyState === 4 && request.status === 200) {
     console.log(request, request.responseText);
-  } else if(request.readyState === 4){
-    console.log('could not fetch the data')
+  } else if (request.readyState === 4) {
+    console.log("could not fetch the data");
   }
 });
 ```
 
 Данный код - проверяет статус запроса
+
 - Если статус = 4 ( получен ) и не имеет ошибок - выведится весь JSON
 - Если статус = 4, без статуса 200 - тогда выдаст ошибку
+
+# Урок 91 - CallBack Functions
+
+Пример использования коллбека асинхронного, выполняющего функцию гет реквеста, с последующим выводом данных в консоль
+
+```js
+const getTodos = (callback) => {
+  const request = new XMLHttpRequest();
+
+  request.addEventListener("readystatechange", () => {
+    if (request.readyState === 4 && request.status === 200) {
+      callback(undefined, request.responseText);
+    } else if (request.readyState === 4) {
+      callback("coud not fetch data", undefined);
+    }
+  });
+
+  request.open("GET", "https://jsonplaceholder.typicode.com/todos");
+  request.send();
+};
+
+getTodos((err, data) => {
+  console.log("callback fired");
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(data);
+  }
+});
+```
+
+# Урок 92 - JSON дата
