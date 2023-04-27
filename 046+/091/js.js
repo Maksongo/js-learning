@@ -8,7 +8,7 @@ const getTodos = (callback) => {
       callback("coud not fetch data", undefined);
     }
   });
-  git commit --amend --no-edit --date=now
+
   request.open("GET", "https://jsonplaceholder.typicode.com/todos");
   request.send();
 };
