@@ -743,4 +743,30 @@ getTodos((err, data) => {
 });
 ```
 
-# Урок 92 - JSON дата
+# Урок 92 - JSON data
+
+## JSON ( javascript object notation ) - это лишь стринг, а не как может показаться - много объектов
+
+- Этим действием мы превращаем JSON в объект ( массив объектов ):
+
+```js
+const data = JSON.parse(request.responseText);
+```
+
+Файлы формата .JSON - сразу представляют из себя формат массива, и имеет упрощенный синтексис
+
+```json
+[{ "text": "play mariokart", "author": "Max", "points": 50, "win": true }]
+```
+
+Пример JSON с несколькими объекатами:
+
+```json
+[
+  { "text": "play mariokart", "author": "Max" },
+  { "text": "buy some bread", "author": "Kekir" },
+  { "text": "do the plumming", "author": "Loler" }
+]
+```
+
+По сути, это способ передачи данных между сервером и клиентом.
