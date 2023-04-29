@@ -624,6 +624,21 @@ speak('shaun'); - это агрумент
 const speak = function(name = 'luigi', time = 'night') – а эт параметры внутри ()
 ```
 
+# Урок 32 - Returning Values
+
+## Возращаемые значения ( return – возвращает значение )
+
+```js
+const CalcArea = function (radius) {
+  return 3.14 * radius ** 2;
+  // let area = 3.14 * radius**2;
+  // return area; - ALSO WORKS – так же можно юзать
+};
+
+const area = CalcArea(5);
+console.log(area);
+```
+
 # Урок 86,87 What is Asynchronous JavaScript
 
 Выполнение JS-кода — однопоточное. Это значит, что в конкретный момент времени движок может выполнять не более одной строки кода. То есть вторая строка не будет выполнена, пока не выполнится первая.
