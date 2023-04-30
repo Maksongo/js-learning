@@ -639,6 +639,36 @@ const area = CalcArea(5);
 console.log(area);
 ```
 
+# Урок 33 - Arrow Functions
+
+## Стрелочные функции
+
+```js
+//regular function
+
+const CalcArea = function(radius){
+    return 3.14 * radius**2;
+}
+
+// arrow function
+
+const CalcArea = (radius) => {
+    return 3.14 * radius**2;
+}
+```
+
+- Еще сокращения:
+
+```js
+const CalcArea = (radius) => 
+скобки у (radius) можно убрать если это единственная переменная. Если несколько или 0 – то () нужны
+```
+
+```js
+const CalcArea = radius =>  3.14 * radius**2;
+если return всего 1 – можно использовать следующее правописание. Без использования {} и return word
+```
+
 # Урок 86,87 What is Asynchronous JavaScript
 
 Выполнение JS-кода — однопоточное. Это значит, что в конкретный момент времени движок может выполнять не более одной строки кода. То есть вторая строка не будет выполнена, пока не выполнится первая.
