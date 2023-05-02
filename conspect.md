@@ -907,7 +907,7 @@ getTodos("todos/luigi.json", (err, data) => {
 Promise – это специальный объект, который содержит своё состояние.
 
 - Вначале pending («ожидание»),
-- Затем – одно из: fulfilled («выполнено успешно») или rejected («выполнено с ошибкой»).
+- Затем – одно из: fulfilled,resolved («выполнено успешно») или rejected («выполнено с ошибкой»).
 
 ---
 
@@ -931,6 +931,9 @@ getSomething().then((data) => {
  }, (err) => {
   console.log(err);
  })
+
+//.then - получаем данные
+//.catch - ловим ошибку
 ```
 
 Пример правильного + более аккуратного получения результата из Промиса
@@ -943,6 +946,37 @@ getSomething().then(data =>{
 })
 ```
 
+---
+
+Итоговый пример использования Promise ( full code ):
+
+```js
+const getTodos = (resourse) => {
+  return new Promise((resolve, reject) => {
+    const request = new XMLHttpRequest();
+
+    request.addEventListener("readystatechange", () => {
+      if (request.readyState === 4 && request.status === 200) {
+        const data = JSON.parse(request.responseText);
+        resolve(data);
+      } else if (request.readyState === 4) {
+        reject("error getting resource");
+      }
+    });
+
+    request.open("GET", resourse);
+    request.send();
+  });
+};
+
+getTodos("todos/luigi.json")
+  .then((data) => {
+    console.log("promise resolved:", data);
+  })
+  .catch((err) => {
+    console.log("promise rejected:", err);
+  });
+```
 
 
 
