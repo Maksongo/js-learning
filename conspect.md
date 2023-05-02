@@ -926,11 +926,14 @@ const getSomething = () => {
 Пример правильного, но слегка массивного получения результата из Промиса
 
 ```js
-getSomething().then((data) => {
-  console.log(data);
- }, (err) => {
-  console.log(err);
- })
+getSomething().then(
+  (data) => {
+    console.log(data);
+  },
+  (err) => {
+    console.log(err);
+  }
+);
 
 //.then - получаем данные
 //.catch - ловим ошибку
@@ -939,11 +942,13 @@ getSomething().then((data) => {
 Пример правильного + более аккуратного получения результата из Промиса
 
 ```js
-getSomething().then(data =>{
-  console.log(data);
-}).catch(err => {
-  console.log(err)
-})
+getSomething()
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 ```
 
 ---
@@ -978,13 +983,27 @@ getTodos("todos/luigi.json")
   });
 ```
 
+# Урок 95 - Chaining Promises
 
 
+Цепочка промисов — это, по сути, несколько асинхронных вызовов функций и их синхронное выполнение один за другим с использованием .then() метода
 
+.catch - работает на любой из промисов
 
-
-
-<!-- На promise можно навешивать колбэки двух типов:
-
-- onFulfilled – срабатывают, когда promise в состоянии «выполнен успешно».
-- onRejected – срабатывают, когда promise в состоянии «выполнен с ошибкой». -->
+```js
+getTodos("todos/luigi.json")
+  .then((data) => {
+    console.log("promise resolved:", data);
+    return getTodos("todos/mario.json");
+  })
+  .then((data) => {
+    console.log("promise 2 resolverd:", data);
+    return getTodos("todos/shaun.json");
+  })
+  .then((data) => {
+    console.log("promise 3 resolved:", data);
+  })
+  .catch((err) => {
+    console.log("promise rejected:", err);
+  });
+```
