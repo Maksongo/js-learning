@@ -646,21 +646,21 @@ console.log(area);
 ```js
 //regular function
 
-const CalcArea = function(radius){
-    return 3.14 * radius**2;
-}
+const CalcArea = function (radius) {
+  return 3.14 * radius ** 2;
+};
 
 // arrow function
 
 const CalcArea = (radius) => {
-    return 3.14 * radius**2;
-}
+  return 3.14 * radius ** 2;
+};
 ```
 
 - Еще сокращения:
 
 ```js
-const CalcArea = (radius) => 
+const CalcArea = (radius) =>
 скобки у (radius) можно убрать если это единственная переменная. Если несколько или 0 – то () нужны
 ```
 
@@ -682,18 +682,17 @@ const CalcArea = radius =>  3.14 * radius**2;
 ```js
 // functions
 
-const greet = () => 'hello';
+const greet = () => "hello";
 
 let resultOne = greet();
 console.log(resultOne);
 
 // methods
 
-const name = 'shaun';
+const name = "shaun";
 
 let resultTwo = name.toUpperCase();
 console.log(resultTwo);
-
 ```
 
 # Урок 86,87 What is Asynchronous JavaScript
@@ -865,3 +864,39 @@ const data = JSON.parse(request.responseText);
 ```
 
 По сути, это способ передачи данных между сервером и клиентом.
+
+# Урок 93 - Callback Hell
+
+## Получение нескольких данных
+
+- Получить данные, вывести их. -> И только после этого приступить к обработке следующих данных позволит следующий код
+
+```js
+// Добавляем переменную resourse
+
+// const getTodos = (resourse, callback) => {
+// request.open("GET", resourse);
+
+// используем её:
+
+getTodos("todos/luigi.json", (err, data) => {
+  console.log(data);
+  getTodos("todos/mario.json", (err, data) => {
+    console.log(data);
+    getTodos("todos/shaun.json", (err, data) => {
+      console.log(data);
+    });
+  });
+});
+```
+
+## Этот способ называется - Callback hell
+
+- Он тяжел для понимания, чтения, обработки. Он достаточно массивно выглядит
+
+Но однако, иногда необходимо получить результат из первых данных. прежде чем получать другие.
+
+В этом нам поможет Promise
+
+# Урок 94 - Promise Basics
+
