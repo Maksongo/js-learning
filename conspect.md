@@ -904,14 +904,53 @@ getTodos("todos/luigi.json", (err, data) => {
 
 <image src="consp_images/promiseInit.png" alt="Описание картинки" width="40%">
 
-Promise – это специальный объект, который содержит своё состояние. 
+Promise – это специальный объект, который содержит своё состояние.
 
 - Вначале pending («ожидание»),
 - Затем – одно из: fulfilled («выполнено успешно») или rejected («выполнено с ошибкой»).
 
 ---
 
-На promise можно навешивать колбэки двух типов:
+Пример Promise:
+
+```js
+const getSomething = () => {
+  return new Promise((resolve, reject) => {
+    //fetch something
+    resolve("some data");
+    reject("some error");
+  });
+};
+```
+
+Пример правильного, но слегка массивного получения результата из Промиса
+
+```js
+getSomething().then((data) => {
+  console.log(data);
+ }, (err) => {
+  console.log(err);
+ })
+```
+
+Пример правильного + более аккуратного получения результата из Промиса
+
+```js
+getSomething().then(data =>{
+  console.log(data);
+}).catch(err => {
+  console.log(err)
+})
+```
+
+
+
+
+
+
+
+
+<!-- На promise можно навешивать колбэки двух типов:
 
 - onFulfilled – срабатывают, когда promise в состоянии «выполнен успешно».
-- onRejected – срабатывают, когда promise в состоянии «выполнен с ошибкой».
+- onRejected – срабатывают, когда promise в состоянии «выполнен с ошибкой». -->
