@@ -1033,3 +1033,24 @@ fetch("todos/luigi.json")
     console.log("rejected", err);
   });
 ```
+
+# Урок 97 - Async & Await
+
+## Создаём асинхронную функцию:
+
+```js
+const getTodos = async () => {};
+```
+
+- Она не будет блокировать действия остального кода
+
+## Делаем запрос:
+
+```js
+const getTodos = async () => {
+  const response = await fetch("todos/luigi.json");
+};
+```
+
+- слово await - позволяет дождаться получения нашего запроса, прежде чем переходить к следующей части кода
+
