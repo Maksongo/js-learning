@@ -1070,7 +1070,6 @@ getTodos().then((data) => console.log("resolved:", data));
 ```
 
 - Поксольку асинхронная функция - это Promise. Нам необходимо создать функцию, которая возьмет данные из промиса и произведёт с ними необходимые действия
-  
 
 # Урок 98 - Throwing and Catching Errors
 
@@ -1083,3 +1082,36 @@ getTodos().then((data) => console.log("resolved:", data));
 ---
 
 - Promise будет выдавать reject - если запрашиваемый JSON непраилен по синтексису. В такм случае произойдет отклонение Промиса
+
+## Мы можем создавать свои ошибки ( параметры для них ):
+
+```js
+if (response.status !== 200) {
+  throw new Error("cannot fetch the data");
+}
+```
+
+## Вывод ошибки:
+
+```js
+getTodos().catch((err) => console.log("rejected:", err.message));
+```
+
+## Полный код асинхронной функции:
+
+```js
+const getTodos = async () => {
+  const response = await fetch("todos/luigi.json");
+
+  if (response.status !== 200) {
+    throw new Error("cannot fetch the data");
+  }
+
+  const data = await response.json();
+  return data;
+};
+
+getTodos()
+  .then((data) => console.log("resolved:", data))
+  .catch((err) => console.log("rejected:", err.message));
+```
