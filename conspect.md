@@ -1115,3 +1115,7 @@ getTodos()
   .then((data) => console.log("resolved:", data))
   .catch((err) => console.log("rejected:", err.message));
 ```
+
+# Практика 99-109 ( Проект Weather App )
+
+Ниже будут полезные заметки, которые я буду подмечать при создании приложения.
