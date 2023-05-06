@@ -695,6 +695,30 @@ let resultTwo = name.toUpperCase();
 console.log(resultTwo);
 ```
 
+# Урок 35 - Foreach Method & Callbacks
+
+Колбэк-функция (или обратный вызов) - это функция, переданная в другую функцию в качестве аргумента, которая затем вызывается по завершению какого-либо действия.
+
+```js
+// Normal Function
+
+let people = ["mario", "luigi", "ryu", "shaun", "chun-li"];
+
+people.forEach((person, index) => {
+  console.log(index, person);
+});
+
+// Call back
+
+let people2 = ["mario", "luigi", "ryu", "shaun", "chun-li"];
+
+const logPerson = (person, index) => {
+  console.log(`${index} - hello ${person}`);
+};
+
+people2.forEach(logPerson);
+```
+
 # Урок 86,87 What is Asynchronous JavaScript
 
 Выполнение JS-кода — однопоточное. Это значит, что в конкретный момент времени движок может выполнять не более одной строки кода. То есть вторая строка не будет выполнена, пока не выполнится первая.
