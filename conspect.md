@@ -719,6 +719,26 @@ const logPerson = (person, index) => {
 people2.forEach(logPerson);
 ```
 
+# Урок 36 - Callback Functions in Action
+
+Коллбек функция в действии:
+
+```js
+const ul = document.querySelector(".people");
+
+const people = ["mario", "luigi", "ryu", "shaun", "chun-li"];
+
+let html = ``;
+
+people.forEach((person) => {
+  // create html template
+  html += `<li style="color: purple">${person}</li>`;
+});
+
+console.log(html);
+ul.innerHTML = html;
+```
+
 # Урок 86,87 What is Asynchronous JavaScript
 
 Выполнение JS-кода — однопоточное. Это значит, что в конкретный момент времени движок может выполнять не более одной строки кода. То есть вторая строка не будет выполнена, пока не выполнится первая.
