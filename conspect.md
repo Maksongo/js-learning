@@ -771,6 +771,37 @@ ul.innerHTML = html;
 
 ---
 
+# Урок 38 - Creating an Object Literal
+
+Создаём литеральный объект:
+
+```js
+let user = {
+  name: "crystal",
+  age: 30,
+  email: "trap@trap.ru",
+  location: "omsk",
+  drinks: ["beer", "vodka"],
+};
+
+console.log(user);
+console.log(user.name);
+```
+
+Меняем значение в объекте:
+
+```js
+user.age = 35;
+```
+
+Так-же можно так запрос делать:
+
+```js
+console.log(user["name"]);
+user["name"] = "chun-li";
+console.log(user["name"]);
+```
+
 # Урок 86,87 What is Asynchronous JavaScript
 
 Выполнение JS-кода — однопоточное. Это значит, что в конкретный момент времени движок может выполнять не более одной строки кода. То есть вторая строка не будет выполнена, пока не выполнится первая.
