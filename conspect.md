@@ -1227,18 +1227,42 @@ getTodos()
 
 Ниже будут полезные заметки, которые я буду подмечать при создании приложения.
 
-## 99 Project Setup
+## 99 - Project Setup
 
 - создал все необходмые файлы и директории для них
 
-## 100 HTML & CSS Template
+## 100 - HTML & CSS Template
 
 - создал HTML n CSS template, с использованием библиотеки BootsTrap
 
-## 101 AccuWeather API
+## 101 - AccuWeather API
 
 - задал в переменную key - API токен
 
 ```js
-const key = 'xvpOBAAypFh84YftzPvUCh8ZM80gbYIG';
+const key = "Miz1PBG3gbDUqWkG8RMo4UNr1Og2EIAO";
+```
+
+## 102 - Get City API Call
+
+- cоздал асинхронную функцию, которая делает запрос, используя АПИ токен + указанный нами город
+
+- затем я вызвал функцию и убедился в её работоспособности
+
+```js
+const getCity = async (city) => {
+
+    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+    const query = `?apikey=${key}&q=${city}`;
+    
+    const response = await fetch(base + query);
+    const data = await response.json();
+
+    return data[0];
+
+};
+
+getCity('manchester')
+    .then(data => console.log(data))
+    .catcg(err => console.log(err));
 ```
