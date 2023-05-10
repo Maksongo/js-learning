@@ -1234,3 +1234,11 @@ getTodos()
 ## 100 HTML & CSS Template
 
 - создал HTML n CSS template, с использованием библиотеки BootsTrap
+
+## 101 AccuWeather API
+
+- задал в переменную key - API токен
+
+```js
+const key = 'xvpOBAAypFh84YftzPvUCh8ZM80gbYIG';
+```
