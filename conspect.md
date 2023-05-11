@@ -1298,3 +1298,6 @@ getCity("manchester")
 2. Получаем из города необходимые данные Key .then((data))
 3. Затем в колбек функцию помещаем return getWeather(data.Key);
 4. Выводим из Промиса информацию  .then(data) => {console.log(data);} - а именно саму погоду
+
+## 104 - Updating the Location
+
