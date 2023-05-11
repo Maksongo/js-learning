@@ -1251,18 +1251,50 @@ const key = "Miz1PBG3gbDUqWkG8RMo4UNr1Og2EIAO";
 
 ```js
 const getCity = async (city) => {
+  const base = "http://dataservice.accuweather.com/locations/v1/cities/search";
+  const query = `?apikey=${key}&q=${city}`;
 
-    const base = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-    const query = `?apikey=${key}&q=${city}`;
-    
-    const response = await fetch(base + query);
-    const data = await response.json();
+  const response = await fetch(base + query);
+  const data = await response.json();
 
-    return data[0];
-
+  return data[0];
 };
 
-getCity('manchester')
-    .then(data => console.log(data))
-    .catcg(err => console.log(err));
+getCity("manchester")
+  .then((data) => console.log(data))
+  .catcg((err) => console.log(err));
 ```
+
+## 103 - Get Weather API Call
+
+- создал функцию, которая по ID выдает погоду для определенного города
+
+```js
+const getWeather = async (id) => {
+  const base = "http://dataservice.accuweather.com/currentconditions/v1/";
+  const query = `${id}?apikey=${key}`;
+
+  const response = await fetch(base + query);
+  const data = await response.json();
+
+  return data[0];
+};
+```
+
+- заставил обе функции работать вместе
+
+```js
+getCity("manchester")
+  .then((data) => {
+    return getWeather(data.Key);
+  })
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((err) => console.log(err));
+```
+
+1. Сначала мы Получаем город Манчестер getCity("manchester")
+2. Получаем из города необходимые данные Key .then((data))
+3. Затем в колбек функцию помещаем return getWeather(data.Key);
+4. Выводим из Промиса информацию  .then(data) => {console.log(data);} - а именно саму погоду
