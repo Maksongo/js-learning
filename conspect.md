@@ -1301,3 +1301,43 @@ getCity("manchester")
 
 ## 104 - Updating the Location
 
+- Код ниже 
+
+```js
+const cityForm = document.querySelector('form');
+
+const updateCity = async (city) => {
+
+  const cityDets = await getCity(city);
+  const weather = await getWeather(cityDets.Key);
+  return {
+    cityDets: cityDets,
+    weather: weather
+  };
+
+};
+
+cityForm.addEventListener('submit', e => {
+  // prevent default action
+  e.preventDefault();
+  
+  // get city value
+  const city = cityForm.city.value.trim();
+  cityForm.reset();
+
+  // update the ui with new city
+  updateCity(city)
+    .then(data => console.log(data))
+    .catch(err => console.log(err));
+});
+```
+
+1. Добавил листенер на нажатие энтер
+- отменяет обновление страницы
+- сохраняет в буффер введенное значение пользователем + очищает форму
+- выводит данные о погоде в консоль
+2. Добавил функцию UpdateCity
+- Стартуется она нажатием на энтер от листенера cityForm
+- отсылается к 2ум функциям из forecast.js и берет ИД города, и из него другая функция берет данные о погоде
+- возвращаем объект ( return ) 
+- и в листенере вызываем функцию, которая отобразит Промис а консоль
