@@ -1366,3 +1366,41 @@ return { cityDets, weather };
 ```
 
 ## 106 Updating the UI
+
+- Добавлен следующий код:
+
+```js
+const card = document.querySelector(".card");
+const details = document.querySelector(".details");
+
+const updateUI = (data) => {
+  const cityDets = data.cityDets;
+  const weather = data.weather;
+
+  // update details template
+  details.innerHTML = `
+    <h5 class="my-3">${cityDets.EnglishName}</h5>
+    <div class="my-3">${weather.WeatherText}</div>
+    <div class="display-4 my-4">
+      <span>${weather.Temperature.Metric.Value}</span>
+      <span>&deg;C</span>
+    </div>
+  `;
+
+  // remove the d-none class if present
+  if (card.classList.contains("d-none")) {
+    card.classList.remove("d-none");
+  }
+};
+```
+
+и
+
+```js
+updateCity(city).then((data) => updateUI(data));
+```
+
+- Берем Данные из Промиса updateCity 
+- селекторами выделаяем необходимые нам элементы ДОМа
+- Обновляем элементы ДОМа - данными из Промиса ( имя города, погода, температура )
+- Удаляем Класс d-none - если он есть при нажатии на энтер
