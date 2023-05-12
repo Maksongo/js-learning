@@ -1297,47 +1297,72 @@ getCity("manchester")
 1. Сначала мы Получаем город Манчестер getCity("manchester")
 2. Получаем из города необходимые данные Key .then((data))
 3. Затем в колбек функцию помещаем return getWeather(data.Key);
-4. Выводим из Промиса информацию  .then(data) => {console.log(data);} - а именно саму погоду
+4. Выводим из Промиса информацию .then(data) => {console.log(data);} - а именно саму погоду
 
 ## 104 - Updating the Location
 
-- Код ниже 
+- Код ниже
 
 ```js
-const cityForm = document.querySelector('form');
+const cityForm = document.querySelector("form");
 
 const updateCity = async (city) => {
-
   const cityDets = await getCity(city);
   const weather = await getWeather(cityDets.Key);
   return {
     cityDets: cityDets,
-    weather: weather
+    weather: weather,
   };
-
 };
 
-cityForm.addEventListener('submit', e => {
+cityForm.addEventListener("submit", (e) => {
   // prevent default action
   e.preventDefault();
-  
+
   // get city value
   const city = cityForm.city.value.trim();
   cityForm.reset();
 
   // update the ui with new city
   updateCity(city)
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
 });
 ```
 
 1. Добавил листенер на нажатие энтер
+
 - отменяет обновление страницы
 - сохраняет в буффер введенное значение пользователем + очищает форму
 - выводит данные о погоде в консоль
+
 2. Добавил функцию UpdateCity
+
 - Стартуется она нажатием на энтер от листенера cityForm
 - отсылается к 2ум функциям из forecast.js и берет ИД города, и из него другая функция берет данные о погоде
-- возвращаем объект ( return ) 
+- возвращаем объект ( return )
 - и в листенере вызываем функцию, которая отобразит Промис а консоль
+
+## 105 - Object Shorthand Notation
+
+- when the property name is the same as the value name
+- когда имя свойства совпадает с именем значения
+
+- Мы можем использовать следующее сокращение:
+
+Из
+
+```js
+return {
+  cityDets: cityDets,
+  weather: weather,
+};
+```
+
+В
+
+```js
+return { cityDets, weather };
+```
+
+## 106 Updating the UI
