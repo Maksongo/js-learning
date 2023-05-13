@@ -802,6 +802,36 @@ user["name"] = "chun-li";
 console.log(user["name"]);
 ```
 
+# Урок 39 - Adding Methods
+
+В объектах можно создавать уникальные методы ( функции ) и затем вызывать их. Пример ниже:
+
+```js
+let user = {
+    name: 'crystal',
+    age: 30,
+    email: 'trap@trap.ru',
+    location: 'omsk',
+    drinks: ['beer', 'vodka'],
+    login: function(){
+        console.log('the user logged in');
+    },
+    logout: function(){
+        console.log('the user logged out');
+    },
+    logDrinks: function (){
+
+    }
+};
+
+user.login();
+user.logout();
+
+const name = 'mario';
+name.toUpperCase();
+
+```
+
 # Урок 86,87 What is Asynchronous JavaScript
 
 Выполнение JS-кода — однопоточное. Это значит, что в конкретный момент времени движок может выполнять не более одной строки кода. То есть вторая строка не будет выполнена, пока не выполнится первая.
