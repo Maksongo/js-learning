@@ -808,29 +808,82 @@ console.log(user["name"]);
 
 ```js
 let user = {
-    name: 'crystal',
-    age: 30,
-    email: 'trap@trap.ru',
-    location: 'omsk',
-    drinks: ['beer', 'vodka'],
-    login: function(){
-        console.log('the user logged in');
-    },
-    logout: function(){
-        console.log('the user logged out');
-    },
-    logDrinks: function (){
-
-    }
+  name: "crystal",
+  age: 30,
+  email: "trap@trap.ru",
+  location: "omsk",
+  drinks: ["beer", "vodka"],
+  login: function () {
+    console.log("the user logged in");
+  },
+  logout: function () {
+    console.log("the user logged out");
+  },
+  logDrinks: function () {},
 };
 
 user.login();
 user.logout();
 
-const name = 'mario';
+const name = "mario";
 name.toUpperCase();
-
 ```
+
+# Урок 40 - ‘this’ keyword
+
+this — это ключевое слово в JavaScript которое содержит в себе объект (контекст) выполняемого кода
+
+Можно представить, что this — это уникальная переменная, которая хранит в себе контекст исполняемого кода. И наоборот — контекст — это значение ключевого слова this.
+
+```js
+let user = {
+  name: "crystal",
+  age: 30,
+  email: "trap@trap.ru",
+  location: "omsk",
+  drinks: ["beer", "vodka"],
+  login() {
+    console.log("the user logged in");
+  },
+  logout() {
+    console.log("the user logged out");
+  },
+  logDrinks() {
+    console.log("the user like to drink: ", this.drinks);
+    this.drinks.forEach((drink) => {
+      console.log(drink);
+    });
+  },
+};
+
+user.login();
+user.logout();
+user.logDrinks();
+```
+
+Arrow функцию – нельзя использовать при создании метода в объекте. Так как она будет отображать window object, а не объект в котором находится
+
+Нужна regular function
+
+Сокращения:
+
+Из
+
+```js
+login: function(){
+  console.log('the user logged in');
+}
+```
+
+В:
+
+```js
+logout(){
+  console.log('the user logged out');
+}
+```
+
+Можно не писать слово function при создании метода в объекте
 
 # Урок 86,87 What is Asynchronous JavaScript
 
