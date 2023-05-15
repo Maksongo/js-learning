@@ -1507,3 +1507,28 @@ const { cityDets, weather } = data;
 
 - Этот способ более новый
 - Симпатичнее, понятнее
+
+## 108 - Weather Icons & images
+
+Добавленный код:
+
+```js
+const time = document.querySelector("img.time");
+const icon = document.querySelector(".icon img");
+
+// update the night/day & icon images
+const iconSrc = `img/icons/${weather.WeatherIcon}.svg`;
+icon.setAttribute("src", iconSrc);
+
+let timeSrc = null;
+if (weather.IsDayTime) {
+  timeSrc = "img/day.svg";
+} else {
+  timeSrc = "img/night.svg";
+}
+time.setAttribute("src", timeSrc);
+```
+
+- данный код берёт по АПИ необходимую информацию и выводит необходимую/соответствующую картинку.
+
+## 109 - Ternary Operator
