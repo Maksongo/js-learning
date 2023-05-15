@@ -1532,3 +1532,29 @@ time.setAttribute("src", timeSrc);
 - данный код берёт по АПИ необходимую информацию и выводит необходимую/соответствующую картинку.
 
 ## 109 - Ternary Operator
+
+Пример Ternary Operator
+
+```js
+const result = condition ? "value 1" : "value 2";
+```
+
+В моём проекте, это позволяет сократить следующий код
+
+Из
+
+```js
+let timeSrc = null;
+
+if (weather.IsDayTime) {
+  timeSrc = "img/day.svg";
+} else {
+  timeSrc = "img/night.svg";
+}
+```
+
+В
+
+```js
+let timeSrc = weather.IsDayTime ? `img/day svg` : "img/night.svg";
+```
