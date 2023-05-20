@@ -887,6 +887,8 @@ logout(){
 
 # Урок 41 - Objects in Arrays
 
+В объекты можно вносить массивы объектов
+
 Пример массива объекта:
 
 ```js
@@ -896,7 +898,36 @@ const drinks = [
 ];
 ```
 
+Полный код объекта в таком случае:
 
+```js
+let user = {
+  name: "crystal",
+  age: 30,
+  email: "trap@trap.ru",
+  location: "omsk",
+  drinks: [
+    { title: "vodka", val: 40 },
+    { title: "beer", val: 5 },
+  ],
+  login() {
+    console.log("the user logged in");
+  },
+  logout() {
+    console.log("the user logged out");
+  },
+  logDrinks() {
+    console.log("the user like to drink: ", this.drinks);
+    this.drinks.forEach((drink) => {
+      console.log(drink.title, drink.val);
+    });
+  },
+};
+
+user.login();
+user.logout();
+user.logDrinks();
+```
 
 # Урок 86,87 What is Asynchronous JavaScript
 
