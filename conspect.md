@@ -931,28 +931,47 @@ user.logDrinks();
 
 # Урок 42
 
-# Урок 43 - 
+# Урок 43 -
 
 # Урок 46 - The Query Selector
 
-// const para = document.querySelector('p'); - select 1(first) P tag
+Данная команда выделяет первый P tag:
 
-// const para = document.querySelector('.error'); - select 1(first) .error class
+```js
+const para = document.querySelector("p");
+```
 
-// const para = document.querySelector('div.error'); - select 1(first) div.error class
+Данная команда выделяет 1 .error класс
 
-// console.log(para)
+```js
+const para = document.querySelector(".error");
+```
 
-const paras = document.querySelectorAll('p'); // select ALL P tags
-const errors = document.querySelectorAll('.error'); // select ALL .error classes
+Данная команда выделяет 1 div.error класс
 
-paras.forEach(para => {
-    console.log(para)
-}); // метод, который выполняет необходимую команду для каждого (forEach) элемента
+```js
+const para = document.querySelector('div.error'); - select 1(first) div.error class
+```
 
-console.log(paras[2]);
-console.log(errors);
+Выделяем все P тэги:
 
+```js
+const paras = document.querySelectorAll("p");
+```
+
+Выдееляем все .error классы:
+
+```js
+const errors = document.querySelectorAll(".error"); // select ALL .error classes
+```
+
+Метод, который выполняет необходимую команду для каждого (forEach) элемента:
+
+```js
+paras.forEach((para) => {
+  console.log(para);
+});
+```
 
 # Урок 86,87 What is Asynchronous JavaScript
 
